@@ -3,7 +3,7 @@
 Based on: https://gist.github.com/tavakyan/4d9ac999dd0689806bf374732bea886d 
 
 ## Explanation
-It uses the current time as the base seed for rand() + whatever you add with the `-i` command
+It uses the current time as the base seed for rand() + whatever you add with the `-i` command. Compiled with gcc
 
 ## To Run
 
