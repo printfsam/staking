@@ -7,13 +7,13 @@ It uses the current time as the base seed for rand() + whatever you add with the
 
 ## To Run
 
-`-t for running tests'
+`-t for running tests`
 
 
- '-h for running help'
+ `-h for running help`
 
 
- '-i (int) for adding randomness to picker`
+ `-i (int) for adding randomness to picker`
 
 
 Doxygen Path: staking/html/staking_8c.html
