@@ -16,53 +16,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "staking.h"
-
-
+#include <string.h>
+#include <time.h>
 int main(int argc, char *argv[]){
 	if(argv[1] == NULL){
 		// Set Preset Rand for testing
 		int testVal = 101010;
 		int *i = &testVal;
-		buildStake(i);
+		buildStake(testVal);
 	}
 	else{
 		int i = atoi(argv[1]);
-		buildStake(&i);
+		buildStake(i);
 	}
 	return 0;
 }
 
-void buildStake(int* randStr){
+void buildStake(int randStr){
 	// An epoch is a sequence of blocks to be proposed by a non-changing (static) list of stakers.
 	// A staker should be assigned a block fairly based on the amount of coins they have staked.
 	// Assume there exists 30 blocks per epoch and we want to select a staker to be a proposer for each block.
-	int blocks_per_epoch = 30;
-	
 	// Each staker has a public key address and an associated balance.
-	struct stakerAccount stakers_in_epoch[STAKERS_AMT];
+	struct stakers stakers_in_epoch[STAKERS_AMT];
 
-	stakers_in_epoch[0].pub_key = "acc2";
+	strcpy(stakers_in_epoch[0].pub_key,"acc2");
 	stakers_in_epoch[0].balance = 6;
-	
-	stakers_in_epoch[1].pub_key = "acc5";
+
+	strcpy(stakers_in_epoch[1].pub_key,"acc5");
 	stakers_in_epoch[1].balance = 10;
 
-	stakers_in_epoch[2].pub_key = "acc1";
+	strcpy(stakers_in_epoch[2].pub_key,"acc1");
 	stakers_in_epoch[2].balance = 15;
 
-	stakers_in_epoch[3].pub_key = "acc3";
+	strcpy(stakers_in_epoch[3].pub_key,"acc3");
 	stakers_in_epoch[3].balance = 14;
 
-	stakers_in_epoch[4].pub_key = "acc0";
+	strcpy(stakers_in_epoch[4].pub_key,"acc0");
 	stakers_in_epoch[4].balance = 15;
 
-	stakers_in_epoch[5].pub_key = "acc7";
+	strcpy(stakers_in_epoch[5].pub_key,"acc7");
 	stakers_in_epoch[5].balance = 5;
 
-	stakers_in_epoch[6].pub_key = "acc6";
+	strcpy(stakers_in_epoch[6].pub_key,"acc6");
 	stakers_in_epoch[6].balance = 3;
 
-	stakers_in_epoch[7].pub_key = "acc4";
+	strcpy(stakers_in_epoch[7].pub_key,"acc4");
 	stakers_in_epoch[7].balance = 27;
 
 
@@ -71,21 +69,54 @@ void buildStake(int* randStr){
 		We do this so coin 0 to (coin 0 + acc1.balance) are owned by acc1 and so on...
 		Basically all the coins are indexed in a sequence from the beginning to the total stake. 
 	*/
-	/* Step 2 - 
-		Compute total number of coins that are being staked for this epoch (ie total stake per epoch)
-	*/
-	//coins_staked = ?
+	qsort(stakers_in_epoch,(STAKERS_AMT),sizeof(stakerAccount),compare);
+	int coins_staked = 0;
+	for(int j; j<STAKERS_AMT; j++){
+		
+		//printf("Index: %i Num: %c \n",j,stakers_in_epoch[j].pub_key[3]);
+		// Step 2
+		coins_staked += stakers_in_epoch[j].balance;
+
+	}
+	// Compute total number of coins that are being staked for this epoch (ie total stake per epoch)
+	printf("Total Coins: %i \n",coins_staked);
+
 	/* Step 3 - 
 		Randomly select a coin index from all the of coins being staked. 
 		Do this for each block in the epoch so we can assign a proposer.
 	*/
-		//coins = ?
+	//printf("%i",*randStr);
+	srand(randStr + time(NULL));
+	int coins[BLOCKS_PER_EPOCH];
+	for(int k; k<BLOCKS_PER_EPOCH; k++){
+		int res_coin = rand() % 95;
+		coins[k] = res_coin;
+	}
+	printf("Coins: ");
+	for(int l; l<BLOCKS_PER_EPOCH; l++){
+		printf("%i ", coins[l]);
+
+	}
+	printf("\n");
 	/* Step 4 - 
 		For each selected coin per block determine the coin owner.
 		These coin owners will be the list of proposers for this block number.
 	*/
 		//proposers = ?
+	for(int m; m <BLOCKS_PER_EPOCH; m++){
 
+	}
+
+}
+// Standard compare function for qsort
+int compare(const void *vp, const void *vq){
+	const struct stakers *p = vp;
+	const struct stakers *q = vq;
+
+	int difference = (int)(p->pub_key[3] - '0') - (int)(q->pub_key[3] - '0');
+	//printf("Diff: %i , q:%i \n",difference,(int)(q->pub_key[3] - '0'));
+	return (difference <= 0 ) ? ((difference < 0) ? -1 : 0) : +1;
+	
 }
 
 /*
