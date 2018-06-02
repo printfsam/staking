@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['stakeraccount',['StakerAccount',['../namespacestaking.html#afa3c90803cade14ab2a86ca62138f44b',1,'staking']]],
-  ['stakers_5fin_5fepoch',['stakers_in_epoch',['../namespacestaking.html#ac360dfca44fbea655c5c9b148272640f',1,'staking']]]
+  ['littleendian',['LittleEndian',['../valgrind_8txt.html#af83fda897b1c3d1ef0216c9630a1f6f8',1,'valgrind.txt']]],
+  ['lowerbounds',['lowerBounds',['../structstakers.html#a8c1a2116b598e2735a1048f1fa23d9cc',1,'stakers']]]
 ];

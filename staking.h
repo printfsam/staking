@@ -10,7 +10,11 @@ int compare(const void *vp,const void *vq);
 void printProposers(char proposers[][PUBKEY_INDEX]);
 void printCoins(int coins[BLOCKS_PER_EPOCH]);
 int testResults(char proposers[BLOCKS_PER_EPOCH][PUBKEY_INDEX]);
-
+/**
+ * @brief Struct to hold the stakers
+ * 
+ *
+ */
 typedef struct stakers{
 		char pub_key[3];
 		int balance;

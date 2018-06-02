@@ -110,7 +110,7 @@ void buildStake(int randStr, bool test){
 		memcpy(coins,coinsIn,sizeof(coins));
 	}
 	printCoins(coins);
-	
+
 	// Step 4
 	int lowerBounds = 0;
 	int upperBounds = 0;
@@ -119,7 +119,6 @@ void buildStake(int randStr, bool test){
 		// increment lower bounds from new balance
 		lowerBounds = upperBounds;
 		upperBounds += stakers_in_epoch[n].balance;	
-
 		stakers_in_epoch[n].lowerBounds = lowerBounds;
 		stakers_in_epoch[n].upperBounds = upperBounds;
 	}

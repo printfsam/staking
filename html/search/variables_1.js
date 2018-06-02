@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['coins',['coins',['../namespacestaking.html#accf18e1fdb0a6900197da58c9a67e7a9',1,'staking']]],
-  ['coins_5fstaked',['coins_staked',['../namespacestaking.html#a95834dd887d5a37db95fd237449f760d',1,'staking']]]
+  ['balance',['balance',['../structstakers.html#a8360f800f9a7f550a93dc234cf5bcab9',1,'stakers']]],
+  ['blocks_5fper_5fepoch',['blocks_per_epoch',['../namespacestaking.html#a4716431bf9674c10059ec7a9ae772cd8',1,'staking']]]
 ];

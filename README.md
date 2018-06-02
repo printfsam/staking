@@ -8,3 +8,7 @@ printf("-i (int) for adding randomness to picker\n");`
 
 
 Doxygen Path: file:///home/sam/Projects/coins/staking/html/staking_8c.html
+
+
+Valgrind command: valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind.txt ./a.out -t
+Results: One memory warning

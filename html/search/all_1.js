@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['coins',['coins',['../namespacestaking.html#accf18e1fdb0a6900197da58c9a67e7a9',1,'staking']]],
-  ['coins_5fstaked',['coins_staked',['../namespacestaking.html#a95834dd887d5a37db95fd237449f760d',1,'staking']]],
-  ['compare',['compare',['../staking_8c.html#a2c86a65b9da40e142dfc852d50c4ce09',1,'compare(const void *vp, const void *vq):&#160;staking.c'],['../staking_8h.html#a2c86a65b9da40e142dfc852d50c4ce09',1,'compare(const void *vp, const void *vq):&#160;staking.c']]]
+  ['balance',['balance',['../structstakers.html#a8360f800f9a7f550a93dc234cf5bcab9',1,'stakers']]],
+  ['blocks_5fper_5fepoch',['blocks_per_epoch',['../namespacestaking.html#a4716431bf9674c10059ec7a9ae772cd8',1,'staking.blocks_per_epoch()'],['../staking_8h.html#a3b2f22bddec7e41545e5dcd74fb293a6',1,'BLOCKS_PER_EPOCH():&#160;staking.h']]],
+  ['buildstake',['buildStake',['../staking_8c.html#a609e9cbfdf8efb1619063572c42d4f2a',1,'buildStake(int randStr, bool test):&#160;staking.c'],['../staking_8h.html#a609e9cbfdf8efb1619063572c42d4f2a',1,'buildStake(int randStr, bool test):&#160;staking.c']]]
 ];
