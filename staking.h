@@ -18,7 +18,6 @@ int testResults(char proposers[BLOCKS_PER_EPOCH][PUBKEY_INDEX]);
 typedef struct stakers{
 		char pub_key[3];
 		int balance;
-		int node_num;
 		int lowerBounds;
 		int upperBounds;
 	} stakerAccount;

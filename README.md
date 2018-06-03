@@ -15,8 +15,14 @@ It uses the current time as the base seed for rand() + whatever you add with the
 
  `-i (int) for adding randomness to picker`
 
+## Code:
+
+Code can be found in staking.c and staking.h 
+
 
 Doxygen Path: staking/html/staking_8c.html
+
+
 
 
 Valgrind command: `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind.txt ./a.out -t`

@@ -86,7 +86,6 @@ void buildStake(int randStr, bool test){
 	// Step 2 
 	int coins_staked = 0;
 	int j;
-
 	for(j=0; j<STAKERS_AMT; ++j){
 		coins_staked += stakers_in_epoch[j].balance;
 	}
@@ -153,7 +152,6 @@ int compare(const void *vp, const void *vq){
 	const struct stakers *q = vq;
 
 	int difference = (int)(p->pub_key[3] - '0') - (int)(q->pub_key[3] - '0');
-	//printf("Diff: %i , q:%i \n",difference,(int)(q->pub_key[3] - '0'));
 	return (difference <= 0 ) ? ((difference < 0) ? -1 : 0) : +1;
 	
 }
@@ -164,6 +162,7 @@ int compare(const void *vp, const void *vq){
  */
 void printProposers(char proposers[][PUBKEY_INDEX]){
 	int z;
+	
 	printf("Proposers: ");
 	for(z=0; z<BLOCKS_PER_EPOCH; ++z){
 		printf("%c%c%c%c ",proposers[z][0],proposers[z][1],proposers[z][2],proposers[z][3]);
