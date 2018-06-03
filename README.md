@@ -19,10 +19,9 @@ It uses the current time as the base seed for rand() + whatever you add with the
 
 Code can be found in staking.c and staking.h 
 
-
 Doxygen Path: staking/html/staking_8c.html
 
-
+Note: coin index 0 is the first coin (coin index 94 is really coin 95)
 
 
 Valgrind command: `valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind.txt ./a.out -t`
