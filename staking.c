@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "staking.h"
+#include <string.h>
+#include <time.h>
+
 /**
 
 	Description: Create a staking example based off of instructions in /staking.py
@@ -11,13 +17,6 @@
 	@date 05/31/2018
 	@author Sam Cesario
 */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "staking.h"
-#include <string.h>
-#include <time.h>
-
 int main(int argc, char *argv[]){
 	if((argv[1] == NULL) || (strcmp(argv[1],"-h") == 0)){
 		printf("-t for running tests\n");
@@ -156,13 +155,13 @@ int compare(const void *vp, const void *vq){
 	
 }
 /**
- * @brief Prints to Prospers
+ * @brief Prints Proposers
  * @param proposers a char[][] of proposers
  * 
  */
 void printProposers(char proposers[][PUBKEY_INDEX]){
 	int z;
-	
+
 	printf("Proposers: ");
 	for(z=0; z<BLOCKS_PER_EPOCH; ++z){
 		printf("%c%c%c%c ",proposers[z][0],proposers[z][1],proposers[z][2],proposers[z][3]);

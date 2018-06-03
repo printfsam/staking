@@ -15,7 +15,7 @@ It uses the current time as the base seed for rand() + whatever you add with the
 
  `-i (int) for adding randomness to picker`
 
-## Code:
+## Code
 
 Code can be found in staking.c and staking.h 
 
